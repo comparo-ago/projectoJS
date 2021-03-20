@@ -121,6 +121,5 @@ arrayCabañas.forEach(cabaña => {
 
 // agregar animaciones 
 
-$("body").prepend('<h3>BIENVENIDOS!!!</h3>');
+$("#tituloForm").prepend('<h3>BIENVENIDOS!!!</h3>');
 $("h3").fadeOut(10000);
-
