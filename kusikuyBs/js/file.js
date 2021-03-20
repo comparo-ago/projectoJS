@@ -104,7 +104,7 @@ padre.replaceChild(elemento2, primerElemento);
 function mostrarAlert(){
 	alert('Escribiste algo?');
 }*/
-let arrayCabañas = ["cab1","cab2","cab3","cab4","cab5"];
+/*let arrayCabañas = ["cab1","cab2","cab3","cab4","cab5"];
 arrayCabañas.forEach(cabaña => {
     let creasElInput = document.createElement('input');
     creasElInput.type = "radio";
@@ -114,7 +114,7 @@ arrayCabañas.forEach(cabaña => {
     creasElLabel = cabaña;
     let div = document.querySelector('#insertarAca');
     div.append(creasElLabel, creasElInput);
-});
+});*/
 
 
 //agregar jquery
