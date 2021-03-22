@@ -46,7 +46,28 @@
                      <form class="form-horizontal" method="post">
                          <fieldset>
                              <legend class="text-center header" id="tituloForm">RESERVAS</legend>
-                             <!--SE COLOCA ESTE DIV PARA JS -->
+                             <h1 class="title">Calendario Interactivo</h1>
+
+                             <div class="calendar">
+                                 <div class="calendar__info">
+                                     <div class="calendar__prev" id="prev-month">&#9664;</div>
+                                     <div class="calendar__month" id="month"></div>
+                                     <div class="calendar__year" id="year"></div>
+                                     <div class="calendar__next" id="next-month">&#9654;</div>
+                                 </div>
+                             
+                                 <div class="calendar__week">
+                                     <div class="calendar__day calendar__item">Mon</div>
+                                     <div class="calendar__day calendar__item">Tue</div>
+                                     <div class="calendar__day calendar__item">Wed</div>
+                                     <div class="calendar__day calendar__item">Thu</div>
+                                     <div class="calendar__day calendar__item">Fri</div>
+                                     <div class="calendar__day calendar__item">Sat</div>
+                                     <div class="calendar__day calendar__item">Sun</div>
+                                 </div>
+                             
+                                 <div class="calendar__dates" id="dates"></div>
+                             </div>
                              <section class="search-form">
                                 <div class="container bg-form col-xl-12 col-sm-12"> 
                                     <form class="row d-flex justify-content-center align-content-center">         
@@ -60,9 +81,9 @@
                                         </div>
                                          <div class="form-column form-group flex-column align-items-center align-self-center col-xl-2 col-sm-6">                                
                                             <label for="guests">Guests</label>
-                                            <select name="guests" id="pasajeros" class="form-control-sm" required=""><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
-                                            <label for="rooms">Cabañas</label>
-                                            <select name="rooms" id="cuartos" class="form-control-sm" required=""><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+                                            <select name="guests" id="pasajeros" class="form-control-sm" required=""><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                            <label for="rooms">Cabaña</label>
+                                            <select name="rooms" id="cuartos" class="form-control-sm" required=""><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
                                         </div>
                                     </form>
                                 </div>

@@ -1,7 +1,7 @@
-//variables constantes funciones
+/*//variables constantes funciones
 
 
-/*function precioDia(){
+function precioDia(){
     let ingNom = prompt("ingrese su Nombre:");
     let ingApe = prompt("Ingrese su Apellido:");
     let nombreCompleto = ingApe +" "+ingNom
@@ -11,9 +11,9 @@
     alert("este es el costo :$"+ precioTotal+" "+ nombreCompleto);
     
 }
-precioDia();*/
+precioDia();
 //Incorporar Objetos
-/*class cliente{
+class cliente{
     constructor(entradaNombre, entradaEdad, entradaDNI, nuevaEstadia){
         this.nombre = entradaNombre.toUpperCase();
         this.edad = parseInt(entradaEdad);
@@ -59,7 +59,7 @@ const aumentos = productos.map(producto => producto.precio += 2000);
 console.log(aumentos);
 
 const orden = productos.sort((b, a) => b - a);  
-console.log(orden);*/
+console.log(orden);
 //STORAGE Y JSON//
 let nombre = {
     name: "Matias Agobian",
@@ -75,7 +75,7 @@ let nombre_deserialized = JSON.parse (localStorage.getItem ("nombre"));
 
 console.log(nombre_deserialized);
 
-/*var elementosDiv = document.getElementsByTagName ("div");
+var elementosDiv = document.getElementsByTagName ("div");
 var segundoParrafo = document.getElementById ("ilusion");
 var elemento = document.createElement("h2");
 var contenido = document.createTextNode("This is an Ilusion")
@@ -96,26 +96,14 @@ let segundoElemento = document.getElementById("primero");
 segundoElemento.innerHTML = ("No tan solo es una <i class ='foo'>ilusion</i>");
 padre.replaceChild(elemento2, primerElemento);
     padre.removeChild(segundoElemento);
-*/
+
 
 // agregar eventos
 
-/*document.getElementById("fname").onclick =  mostrarAlert;
+document.getElementById("fname").onclick =  mostrarAlert;
 function mostrarAlert(){
 	alert('Escribiste algo?');
 }*/
-/*let arrayCabañas = ["cab1","cab2","cab3","cab4","cab5"];
-arrayCabañas.forEach(cabaña => {
-    let creasElInput = document.createElement('input');
-    creasElInput.type = "radio";
-    creasElInput.id = cabaña;
-    let creasElLabel = document.createElement('label');
-    creasElLabel.for = cabaña;
-    creasElLabel = cabaña;
-    let div = document.querySelector('#insertarAca');
-    div.append(creasElLabel, creasElInput);
-});*/
-
 
 //agregar jquery
 
@@ -123,3 +111,77 @@ arrayCabañas.forEach(cabaña => {
 
 $("#tituloForm").prepend('<h3>BIENVENIDOS!!!</h3>');
 $("h3").fadeOut(10000);
+
+let monthNames = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto',
+'Septiembre','Octubre','Noviembre','Diciembre'];
+
+let currentDate = new Date();
+let currentDay = currentDate.getDate();
+let monthNumber = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+
+let dates = document.getElementById('dates');
+let months = document.getElementById('month');
+let years = document.getElementById('year');
+
+let prevMonthDOM = document.getElementById('prev-month');
+let nextMonthDOM = document.getElementById('next-month');
+
+month.textContent = monthNames[monthNumber];
+years.textContent = currentYear.toString();
+
+prevMonthDOM.addEventListener('click',()=>lastMonth());
+nextMonthDOM.addEventListener('click',()=>nextMonth());
+
+
+function writeMonth(month){
+  for(let i = 1; i <=getTotalDays(month); i++){
+      
+    if(i===currentDay){
+    dates.innerHTML += `<div class= "calendar__date calendar__item callendar__today">${i} </div>`;
+    }else{
+        dates.innerHTML += `<div class= "calendar__date calendar__item">${i} </div>`;
+    }
+  }
+}
+
+function getTotalDays(month){
+    if (month === -1) month = 11;
+    
+    if (month == 0 || month== 2 || month == 4 || month == 6 || month == 7 ||month == 9 || month == 11){
+        return 31;
+    }else if (month == 3 || month == 5 || month == 8 || month == 10){
+        return 30
+    }else {
+        return isleap() ? 29:28;
+    }
+}
+function isleap(){
+return ((currentYear % 100 !==0) && (currentYear % 4 === 0) || (currentYear % 400 ===0));
+}
+function startDay(){
+    let start = new Date(currentYear, monthNumber, 1);
+    return ((start.getDay()-1) === -1) ? 6 : start.getDay()-1;
+}
+function lastMonth (){
+    if(monthNumber !== 0){
+    }else{
+        monthNumber = 11;
+        currentYear--;
+    }
+    
+    setNewDate();
+}
+
+function nextMonth(){
+    if(monthNumber !== 0){
+    }else{
+        monthNumber = 11;
+        currentYear--;
+    }
+}
+function setNewDate(){
+    currentDate.setFullYear(currentYear,monthNumber,currentDay);
+    month.textContent = monthNames[monthNumber];
+    year.textContent = currentYear.toString();
+}
