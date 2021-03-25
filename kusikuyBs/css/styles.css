@@ -2481,9 +2481,7 @@ fieldset:disabled a.btn {
   background-color: #f4e664;
   border-color: #c9bc4f;
 }
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
 
-}
 
 .btn-secondary {
   color: #fff;
@@ -7636,7 +7634,7 @@ button.bg-black:focus {
 
 .mb-1,
 .my-1 {
-  margin-bottom: 0.25rem !important;
+  margin-bottom: 1.00 !important;
 }
 
 .ml-1,
@@ -10392,3 +10390,7 @@ body {
     margin: auto; }
   .calendar__last-days {
     opacity: .3; }
+  #parrafo{
+    padding-top: 40px;
+    
+  }
