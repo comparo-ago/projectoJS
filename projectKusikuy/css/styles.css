@@ -1832,7 +1832,7 @@ textarea.form-control {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .btn {
@@ -1881,8 +1881,6 @@ fieldset:disabled a.btn {
   background-color: #9aa728;
   border-color: #737c1d; }
 
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(174, 175, 123, 0.664); }
 
 .btn-secondary {
   color: #928f8f; }
@@ -1896,10 +1894,7 @@ fieldset:disabled a.btn {
 .btn-secondary:disabled, .btn-secondary:disabled {
   color: gray; }
 
-.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
-  color: dimgray;
-  background-color: transparent;
-  border-color: #4e555b; }
+
 
 .btn-success {
   color: #fff;
@@ -6162,7 +6157,7 @@ button.bg-black:focus {
 
 .mb-1,
 .my-1 {
-  margin-bottom: 0.25rem !important; }
+  margin-bottom: 1.00rem !important; }
 
 .ml-1,
 .mx-1 {
@@ -7800,7 +7795,6 @@ body {
     border-bottom: 0.25rem solid #e0ee90; } }
 
 .btn {
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 80%;
@@ -7890,7 +7884,6 @@ body {
   background-size: cover; }
 
 .signup-section .form-inline input {
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   height: auto;
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
