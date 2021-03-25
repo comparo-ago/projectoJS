@@ -205,3 +205,4 @@ const setNewDate = () => {
 }
 
 writeMonth(monthNumber);
+document.querySelectorAll('.calendar__item').forEach(e=>e.addEventListener('click', (e)=>{alert(`Fecha seleccionada: ${e.target.textContent} `)} ))

@@ -7774,7 +7774,7 @@ body {
     padding: 2rem 1.5rem;
     color: #ffff01; }
   #mainNav .nav-link:hover {
-    color: #fffb01; }
+    color: #a1a049; }
   #mainNav .nav-link:active {
     color: #ffee01; }
   #mainNav.navbar-shrink {
@@ -7786,7 +7786,7 @@ body {
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent; }
   #mainNav.navbar-shrink .nav-link:hover {
-    color: #ffe600; }
+    color: #a1a049; }
   #mainNav.navbar-shrink .nav-link:active {
     color: #ffe600; }
   #mainNav.navbar-shrink .nav-link.active {
@@ -7871,7 +7871,7 @@ body {
   .projects-section .project-text {
     padding: 5rem; }
   .projects-section .project-text hr {
-    border-color: #ffe600;
+    border-color: #d9dd069c;
     border-width: 0.25rem;
     width: 30%; } }
 
