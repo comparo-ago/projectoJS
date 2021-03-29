@@ -111,99 +111,39 @@ function mostrarAlert(){
 
 $("#tituloForm").prepend('<h3>BIENVENIDOS!!!</h3>');
 
-let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October', 'November', 'December'];
+function isMobile() {
+    if (sessionStorage.desktop)
+        return false;
+    else if (localStorage.mobile)
+        return true;
+    var mobile = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
+    for (var i in mobile)
+        if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
+    return false;
+}
 
-let currentDate = new Date();
-let currentDay = currentDate.getDate();
-let monthNumber = currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
+const formulario = document.querySelector('#form-horizontal');
+const buttonSubmit = document.querySelector('#btn btn-primary btn-lg');
+const urlDesktop = 'https://web.whatsapp.com/';
+const urlMobile = 'whatsapp://';
+const telefono = '+5493516561773';
 
-let dates = document.getElementById('dates');
-let month = document.getElementById('month');
-let year = document.getElementById('year');
-
-let prevMonthDOM = document.getElementById('prev-month');
-let nextMonthDOM = document.getElementById('next-month');
-let buttonForm = document.getElementById('btnForm');
-
-month.textContent = monthNames[monthNumber];
-year.textContent = currentYear.toString();
-
-prevMonthDOM.addEventListener('click', ()=>lastMonth());
-nextMonthDOM.addEventListener('click', ()=>nextMonth());
-
-
-
-const writeMonth = (month) => {
-
-    for(let i = startDay(); i>0;i--){
-        dates.innerHTML += ` <div class="calendar__date calendar__item calendar__last-days">
-            ${getTotalDays(monthNumber-1)-(i-1)}
-        </div>`;
-    }
-
-    for(let i=1; i<=getTotalDays(month); i++){
-        if(i===currentDay) {
-            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__today">${i}</div>`;
+formulario.addEventListener('submit', (event) => {
+    event.preventDefault()
+    buttonSubmit.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>'
+    buttonSubmit.disabled = true
+    setTimeout(() => {
+        let nombre = document.querySelector('#fname').value
+        let apellidos = document.querySelector('#lname').value
+        let email = document.querySelector('#email').value
+        let phone = document.querySelector('#phone').value
+        let mensaje = 'send?phone=' + telefono + '&text=*_Formulario Easy App CODE_*%0A*¿Cual es tu nombre?*%0A' + nombre + '%0A*¿Cuáles son tus apellidos?*%0A' + apellidos + '%0A*¿Cuál es tu correo electrónico?*%0A' + email + ''
+        if(isMobile()) {
+            window.open(urlMobile + mensaje, '_blank')
         }else{
-            dates.innerHTML += ` <div class="calendar__date calendar__item">${i}</div>`;
+            window.open(urlDesktop + mensaje, '_blank')
         }
-    }
-}
-
-const getTotalDays = month => {
-    if(month === -1) month = 11;
-
-    if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
-        return  31;
-
-    } else if (month == 3 || month == 5 || month == 8 || month == 10) {
-        return 30;
-
-    } else {
-
-        return isLeap() ? 29:28;
-    }
-}
-
-const isLeap = () => {
-    return ((currentYear % 100 !==0) && (currentYear % 4 === 0) || (currentYear % 400 === 0));
-}
-
-const startDay = () => {
-    let start = new Date(currentYear, monthNumber, 1);
-    return ((start.getDay()-1) === -1) ? 6 : start.getDay()-1;
-}
-
-const lastMonth = () => {
-    if(monthNumber !== 0){
-        monthNumber--;
-    }else{
-        monthNumber = 11;
-        currentYear--;
-    }
-
-    setNewDate();
-}
-
-const nextMonth = () => {
-    if(monthNumber !== 11){
-        monthNumber++;
-    }else{
-        monthNumber = 0;
-        currentYear++;
-    }
-
-    setNewDate();
-}
-
-const setNewDate = () => {
-    currentDate.setFullYear(currentYear,monthNumber,currentDay);
-    month.textContent = monthNames[monthNumber];
-    year.textContent = currentYear.toString();
-    dates.textContent = '';
-    writeMonth(monthNumber);
-}
-
-writeMonth(monthNumber);
-document.querySelectorAll('.calendar__item').forEach(e=>e.addEventListener('click', (e)=>{alert(`Fecha seleccionada: ${e.target.textContent} `)} ))
+        buttonSubmit.innerHTML = '<i class="fab fa-whatsapp"></i> Enviar WhatsApp'
+        buttonSubmit.disabled = false
+    }, 3000);
+});
