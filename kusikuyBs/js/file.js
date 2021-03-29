@@ -124,6 +124,7 @@ let year = document.getElementById('year');
 
 let prevMonthDOM = document.getElementById('prev-month');
 let nextMonthDOM = document.getElementById('next-month');
+let buttonForm = document.getElementById('btnForm');
 
 month.textContent = monthNames[monthNumber];
 year.textContent = currentYear.toString();
